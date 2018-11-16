@@ -3,6 +3,7 @@ package pl.aw.iventz.users.registration;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.aw.iventz.infrastracture.BaseEntity;
 
 import javax.persistence.*;
 
@@ -10,13 +11,10 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-public class UserRole {
+public class UserRole extends BaseEntity {
 
     public static final String ROLE_USER = "ROLE_USER";
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     @Column(unique = true)
     private String roleName;
 

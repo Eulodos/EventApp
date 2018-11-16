@@ -3,6 +3,7 @@ package pl.aw.iventz.users.registration;
 import lombok.Getter;
 import lombok.Setter;
 import pl.aw.iventz.comments.Comment;
+import pl.aw.iventz.infrastracture.BaseEntity;
 
 import javax.persistence.*;
 import java.util.List;
@@ -11,11 +12,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-public class User {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class User extends BaseEntity {
 
     @Column(unique = true, length = 100)
     private String email;

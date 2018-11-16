@@ -3,6 +3,7 @@ package pl.aw.iventz.comments;
 import lombok.Getter;
 import lombok.Setter;
 import pl.aw.iventz.events.Event;
+import pl.aw.iventz.infrastracture.BaseEntity;
 import pl.aw.iventz.users.registration.User;
 
 import javax.persistence.*;
@@ -11,11 +12,8 @@ import java.util.Date;
 @Entity
 @Getter
 @Setter
-public class Comment {
+public class Comment extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date commentCreationDate;

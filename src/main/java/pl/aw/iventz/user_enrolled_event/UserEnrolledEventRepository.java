@@ -18,7 +18,7 @@ public interface UserEnrolledEventRepository extends JpaRepository<UserEnrolledE
 //    @Query(value = "DELETE FROM UserEnrolledEvent u WHERE u.event.id=?1 AND u.user.id=?2")
 //    void deleteByEventAndUser(Long eventId, Long userId);
 
-    @Query(value = "SELECT u FROM UserEnrolledEvent uee JOIN User u ON uee.user.id=u.id")
+    @Query(value = "SELECT u FROM UserEnrolledEvent uee JOIN User u ON uee.user.id=u.id JOIN Event e ON uee.event.id=e.id WHERE e.id=?1")
     List<User> findByEventId(Long eventId);
 
 }

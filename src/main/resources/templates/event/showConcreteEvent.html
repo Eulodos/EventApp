@@ -122,11 +122,13 @@
 
 <h3 style=text-align:center;color:lightseagreen>Na to wydarzenie zapisali się już:</h3>
 
+<div th:if="${allUsersEnrolled}">
 <table>
     <tr th:each="userEnrolled : ${allUsersEnrolled}">
         <td th:text="${userEnrolled.displayName}" style="text-align: center"></td>
     </tr>
 </table>
+</div>
 
 <br>
 
